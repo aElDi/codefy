@@ -13,8 +13,11 @@
   .card {
     @apply  bg-white bg-opacity-60 p-4 shadow-md rounded-lg
   }
-  .jump {
-    @apply hover:bg-opacity-70 hover:scale-[100.5%] transition-all duration-500
+  .jump-sm {
+    @apply hover:scale-[100.3%] transition-all duration-500
+  }
+  .jump-lg {
+    @apply hover:scale-[102%] transition-all duration-500
   }
 }
 

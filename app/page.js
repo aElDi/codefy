@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="w-full 2xl:w-3/4 h-full flex flex-col gap-2 md:gap-4 ">
-      <div className="card flex w-full justify-between overflow-hidden relative">
+      <div className="card flex w-full justify-between duration-500 hover:bg-opacity-90 overflow-hidden relative">
         <div className="flex flex-col gap-4 md:p-2">
           <h1 className="text-4xl md:text-6xl font-bold text-blue-500">Codefy</h1>
           <span className="hidden md:block pl-1 text-lg lg:text-xl font-medium opacity-80">
@@ -38,7 +38,7 @@ export default function Home() {
         ></Image>
       </div>
       <div className="w-full flex flex-col md:flex-row justify-between gap-2 md:gap-6">
-        <div className="card w-full ">
+        <div className="card w-full jump-sm hover:bg-opacity-90">
           <h2 className="text-3xl font-semibold mb-2">What is it?</h2>
           <span className="opacity-80">
             This collection features valuable links for programmers, including
@@ -46,7 +46,7 @@ export default function Home() {
             your <b className="uppercase">best projects</b> to life.
           </span>
         </div>
-        <div className="card w-full">
+        <div className="card w-full jump-sm hover:bg-opacity-90">
           <h2 className="text-3xl font-semibold mb-2">How to add?</h2>
           <span className="opacity-80">
             On the{" "}
@@ -58,7 +58,7 @@ export default function Home() {
             away.
           </span>
         </div>
-        <div className="card w-full space-y-2">
+        <div className="card w-full space-y-2 jump-sm hover:bg-opacity-90">
           <h2 className="text-3xl font-semibold mb-2">Source code</h2>
           <span className="flex flex-col gap-2">
             <Link href="https://github.com/aElDi/codefy" className="flex flex-row gap-3 items-center w-fit">

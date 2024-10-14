@@ -11,7 +11,7 @@ export function Header({ className }) {
   return (
     <header
       className={cn(
-        "bg-white bg-opacity-60 backdrop-blur-sm rounded-lg shadow-md jump flex py-0 px-3 md:px-2 gap-3 md:gap-4 items-center",
+        "bg-white bg-opacity-60 backdrop-blur-sm rounded-lg shadow-md jump-sm flex py-0 px-3 md:px-2 gap-3 md:gap-4 items-center hover:bg-opacity-70 ",
         className
       )}
     >
@@ -46,7 +46,7 @@ export function Header({ className }) {
           }
         ></Input>
         <Link href="https://github.com/aElDi/codefy">
-          <Button variant="ghost" size="icon" className="h-10 w-10 scale-125">
+          <Button variant="ghost" size="icon" className="h-10 w-10 scale-125 hover:bg-transparent">
             <GitHubLogoIcon strokeWidth={1}  />
           </Button>
         </Link>
