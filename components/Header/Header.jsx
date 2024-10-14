@@ -39,7 +39,7 @@ export function Header({ className }) {
           type="text"
           placeholder="Search"
           icon={
-            <Button variant="ghost" size={18} onClick={() => alert("CEBA LOX")}>
+            <Button variant="ghost" size={18}>
               <MagnifyingGlassIcon color="gray" width={18} height={18} />
             </Button>
           }
