@@ -93,14 +93,6 @@
         "Sysadmin"
       ],
       "likes": 0
-      "title": "Awesome Sysadmin",
-      "link": "https://github.com/awesome-foss/awesome-sysadmin",
-      "desc": "Free and Open-Source sysadmin resources",
-      "tags": [
-        "Wiki",
-        "Sysadmin"
-      ],
-      "likes": 0
     },
     {
       "title": "Markdown Guide",
@@ -202,7 +194,6 @@
       ],
       "likes": 0
     },
-    },
     {
       "title": "VS Code Extensions",
       "link": "https://hl2guide.github.io/Awesome-Visual-Studio-Code-Extensions/",
@@ -215,7 +206,6 @@
       ],
       "likes": 0
     },
-    },
     {
       "title": "VS Code source",
       "link": "https://github.com/microsoft/vscode",
@@ -227,7 +217,6 @@
       ],
       "likes": 0
     },
-    },
     {
       "title": "Best sites should visit",
       "link": "https://github.com/sdmg15/Best-websites-a-programmer-should-visit",
@@ -238,7 +227,6 @@
         "Dev"
       ],
       "likes": 0
-    },
     },
     {
       "title": "Dev to",
@@ -253,7 +241,6 @@
       ],
       "likes": 0
     },
-    },
     {
       "title": "Medium",
       "link": "https://medium.com/@adarshrai3011/30-killer-websites-for-web-developers-2370db339878",
@@ -266,7 +253,6 @@
         "Program"
       ],
       "likes": 0
-    }
     }
   ]
 }
