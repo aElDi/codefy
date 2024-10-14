@@ -11,12 +11,12 @@ export function Header({ className }) {
   return (
     <header
       className={cn(
-        "bg-white bg-opacity-60 backdrop-blur-sm rounded-lg shadow-md jump flex py-1 px-2 gap-4 items-center",
+        "bg-white bg-opacity-60 backdrop-blur-sm rounded-lg shadow-md jump flex py-0 px-3 md:px-2 gap-3 md:gap-4 items-center",
         className
       )}
     >
       <Link href="/">
-        <Image alt='logo' width={32} height={32} src="/img/logo@light.png"/>
+        <Image className="scale-125 md:scale-100" alt='logo' width={32} height={32} src="/img/logo@light.png"/>
       </Link>
 
       <nav className="flex gap-4 w-full">
@@ -38,13 +38,14 @@ export function Header({ className }) {
         <Input
           type="text"
           placeholder="Search"
+          className="h-6 md:h-fit"
           icon={
             <Button variant="ghost" size={18}>
               <MagnifyingGlassIcon color="gray" width={18} height={18} />
             </Button>
           }
         ></Input>
-        <Button variant="ghost" size="icon" className="h-8 w-8">
+        <Button variant="ghost" size="icon" className="h-10 w-10 scale-125">
           <GitHubLogoIcon strokeWidth={1}  />
         </Button>
       </section>
