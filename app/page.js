@@ -59,7 +59,7 @@ export default function Home() {
         <div className="card w-full space-y-2">
           <h2 className="text-xl font-semibold">Source code</h2>
           <span className="flex flex-col gap-2">
-            <Link href="" className="flex flex-row gap-3 items-center w-fit">
+            <Link href="https://github.com/aElDi/codefy" className="flex flex-row gap-3 items-center w-fit">
               <GitHubLogoIcon width={26} height={26} />
               <span className="text-lg underline underline-offset-2 after:content-['_↗']">
                 Github

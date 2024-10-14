@@ -39,14 +39,16 @@ export function Header({ className }) {
           type="text"
           placeholder="Search"
           icon={
-            <Button variant="ghost" size={18} onClick={() => alert("CEBA LOX")}>
+            <Button variant="ghost" size={18} onClick={() => alert("No work")}>
               <MagnifyingGlassIcon color="gray" width={18} height={18} />
             </Button>
           }
         ></Input>
-        <Button variant="ghost" size="icon" className="h-8 w-8">
-          <GitHubLogoIcon strokeWidth={1}  />
-        </Button>
+        <Link href="https://github.com/aElDi/codefy">
+          <Button variant="ghost" size="icon" className="h-8 w-8">
+            <GitHubLogoIcon strokeWidth={1}  />
+          </Button>
+        </Link>
       </section>
     </header>
   );
