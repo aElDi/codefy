@@ -19,14 +19,16 @@ import { Badge } from "../ui/badge";
 import { useState } from "react";
 import { ArrowDown, ArrowUp } from "lucide-react";
 
-let DEFAULT_TAGS_COUNT;
-var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-if (width > 768) {
-  DEFAULT_TAGS_COUNT = 3;
-} else if (width < 768 && width > 650) {
-  DEFAULT_TAGS_COUNT = 4;
-} else {
-  DEFAULT_TAGS_COUNT = 5;
+let DEFAULT_TAGS_COUNT = 3;
+if (typeof window !== "undefined") {
+  var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+  if (width > 768) {
+    DEFAULT_TAGS_COUNT = 3;
+  } else if (width < 768 && width > 650) {
+    DEFAULT_TAGS_COUNT = 4;
+  } else {
+    DEFAULT_TAGS_COUNT = 5;
+  }
 }
 
 export default function LinkCard({ linkObj }) {
@@ -40,7 +42,7 @@ export default function LinkCard({ linkObj }) {
       text: `Hey, look at '${linkObj.title}'`,
     };
 
-    if (navigator.canShare(shareObj)) navigator.share(shareObj)
+    if (navigator.canShare(shareObj)) navigator.share(shareObj);
     else navigator.clipboard.writeText(shareObj.url);
   };
 
