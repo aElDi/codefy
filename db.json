@@ -1,0 +1,88 @@
+{
+  "data": [
+    {
+      "title": "Software Quality Wiki",
+      "link": "https://github.com/ligurio/sqa-wiki/wiki",
+      "desc": "There are many useful learning resources related to software testing, formal methods, static and dynamic analysis and so on.",
+      "tags": [
+        "wiki",
+        "github"
+      ],
+      "likes": 0
+    },
+    {
+      "title": "EPSK",
+      "link": "https://github.com/mtdvio/every-programmer-should-know",
+      "desc": "A collection of (mostly) technical things every software developer should know.",
+      "tags": [
+        "github",
+        "wiki"
+      ],
+      "likes": 0
+    },
+    {
+      "title": "Bookmarks",
+      "link": "https://github.com/SansGuidon/bookmarks?tab=readme-ov-file",
+      "desc": "A collection of Awesome resources for geeks and software crafters 🍺",
+      "tags": [
+        "github",
+        "wiki"
+      ],
+      "likes": 0
+    },
+    {
+      "title": "Full Stack Course",
+      "link": "https://fullstackopen.com/en/",
+      "desc": "Free open full stack course!",
+      "tags": [
+        "github",
+        "javascript",
+        "react",
+        "typescript",
+        "node.js"
+      ],
+      "likes": 0
+    },
+    {
+      "title": "Doka",
+      "link": "https://doka.guide/",
+      "desc": "A Doca is documentation for developers in plain language. It is written by the community to help each other",
+      "tags": [
+        "javascript",
+        "html",
+        "css",
+        "web"
+      ],
+      "likes": 1
+    },
+    {
+      "title": "Radicle",
+      "link": "https://radicle.xyz/",
+      "desc": "peer-to-peer code collaboration stack built on Git",
+      "tags": [
+        "Git",
+        "Open Source",
+        "macOS",
+        "Linux",
+        "Desktop",
+        "Program"
+      ],
+      "likes": 1
+    },
+    {
+      "title": "HTTPie",
+      "link": "https://httpie.io/",
+      "desc": "An open-source API testing client for open minds",
+      "tags": [
+        "macOS",
+        "Linux",
+        "Windows",
+        "Http",
+        "CLI",
+        "Desktop",
+        "Web"
+      ],
+      "likes": 0
+    }
+  ]
+}

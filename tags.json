@@ -1,0 +1,41 @@
+[
+    {
+        "category": "Languages",
+        "tags": [
+            "Python",
+            "Java",
+            "C#",
+            "Go",
+            "Rust",
+            "JavaScript",
+            "TypeScript",
+            "Html",
+            "CSS",
+            "PHP",
+            "Ruby",
+            "Swift",
+            "Kotlin",
+            "C++",
+            "Dart",
+            "R",
+            "Scala",
+            "Perl",
+            "Objective-C",
+            "Shell",
+            "MATLAB",
+            "Julia",
+            "C",
+            "F#"
+        ]
+    },
+    {
+        "category": "Type",
+        "tags": [
+            "Guide",
+            "Article",
+            "Wiki",
+            "Hard skills",
+            "Soft skills"
+        ]
+    }
+]
