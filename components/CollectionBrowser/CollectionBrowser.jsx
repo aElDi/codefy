@@ -19,7 +19,7 @@ export default function CollectionBrowser({ list }) {
   }, [sortRule]);
 
   return (
-    <div className="w-full flex flex-col gap-4 h-fit ">
+    <div className="w-full flex flex-col gap-0 md:gap-4 h-fit ">
       <div className="h-fit p-1 flex gap-2 ">
         <Button
           className="bg-white bg-opacity-80 shadow-md items-center flex gap-1 hover:bg-blue-500 text-black text-opacity-80 hover:text-white text-lg px-2 py-4 w-fit"
@@ -31,7 +31,7 @@ export default function CollectionBrowser({ list }) {
         </Button>
 
       </div>
-      <div className="grid gap-4 w-fit sm:min-w-[50%] md:min-w-[60%] lg:min-w-[77%] p-4 place-self-center bg-white bg-opacity-30 rounded-2xl"
+      <div className="grid gap-3 md:gap-4 w-full md:w-fit sm:min-w-[50%] md:min-w-[60%] lg:min-w-[77%] p-2 md:p-4 place-self-center md:bg-white md:bg-opacity-30 md:rounded-2xl"
            style={{ gridTemplateColumns: "repeat(auto-fill, minmax(18rem, 1fr))" }}>
         {shownList.map((link, index) => ( 
           <LinkCard linkObj={link} key={index} />

@@ -5,11 +5,11 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="w-full 2xl:w-3/4 h-full flex flex-col gap-4 ">
+    <div className="w-full 2xl:w-3/4 h-full flex flex-col gap-2 md:gap-4 ">
       <div className="card flex w-full justify-between overflow-hidden relative">
-        <div className="flex flex-col gap-4 p-2">
-          <h1 className="text-6xl font-bold text-blue-500">Codefy</h1>
-          <span className="pl-1 text-xl font-medium opacity-80">
+        <div className="flex flex-col gap-4 md:p-2">
+          <h1 className="text-4xl md:text-6xl font-bold text-blue-500">Codefy</h1>
+          <span className="hidden md:block pl-1 text-lg lg:text-xl font-medium opacity-80">
             Have a look to collection of useful links
           </span>
           <div className="flex gap-2">
@@ -21,32 +21,34 @@ export default function Home() {
             <Link href="/create">
               <Button
                 variant="outline"
-                className="h-8 w-8 p-0 border-gray-400 text-gray-500 hover:text-blue-500 hover:border-blue-300"
+                className="h-8 w-fit px-2 border-gray-400 text-gray-500 hover:text-blue-500 hover:border-blue-300"
               >
+                <span className="pr-1">Add Link</span>
                 <PlusIcon width={20} height={20} />
+                
               </Button>
             </Link>
           </div>
         </div>
         <Image
-          className="absolute lg:-top-3/4 right-2 "
+          className="absolute -top-full -right-[33%]  md:-top-3/4 md:right-2 scale-50 md:scale-100"
           src="/img/logomonocolor.svg"
           width={512}
           height={512}
         ></Image>
       </div>
-      <div className="flex justify-between gap-6">
-        <div className="card w-full">
-          <h2 className="text-xl font-semibold">What is it?</h2>
-          <span>
+      <div className="w-full flex flex-col md:flex-row justify-between gap-2 md:gap-6">
+        <div className="card w-full ">
+          <h2 className="text-3xl font-semibold mb-2">What is it?</h2>
+          <span className="opacity-80">
             This collection features valuable links for programmers, including
             articles, courses, libraries, and tools designed to help you bring
             your <b className="uppercase">best projects</b> to life.
           </span>
         </div>
-        <div className="card w-full  space-y-2">
-          <h2 className="text-xl font-semibold">How to add?</h2>
-          <span>
+        <div className="card w-full">
+          <h2 className="text-3xl font-semibold mb-2">How to add?</h2>
+          <span className="opacity-80">
             On the{" "}
             <Link href="/create" className="text-blue-600 after:content-['_↗']">
               Create page
@@ -57,7 +59,7 @@ export default function Home() {
           </span>
         </div>
         <div className="card w-full space-y-2">
-          <h2 className="text-xl font-semibold">Source code</h2>
+          <h2 className="text-3xl font-semibold mb-2">Source code</h2>
           <span className="flex flex-col gap-2">
             <Link href="https://github.com/aElDi/codefy" className="flex flex-row gap-3 items-center w-fit">
               <GitHubLogoIcon width={26} height={26} />
@@ -66,7 +68,7 @@ export default function Home() {
               </span>
             </Link>
             <span>
-              If you have a suggestions or questions, ypu can contact me in
+              If you have a suggestions or questions, you can contact me in
               Telegram:{" "}
               <Link className="text-blue-600" href="https://t.me/a3ldi">
                 @a3ldi
