@@ -6,7 +6,7 @@
 
 # **Codefy**
 
-The Collection of useful links and resources for programmers, categorised by tags
+Welcome to **Codefy**. This project is website with a curated collection of useful links and resources for programmers, categorized by tags for easy navigation. In the ever-evolving field of programming, having quick access to quality resources can significantly enhance your learning and productivity. Codefy aims to provide a comprehensive list of valuable links, including tutorials, documentation, tools, and more, all organized by relevant tags.
 
 
 ## Screenshots
