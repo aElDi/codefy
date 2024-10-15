@@ -16,24 +16,25 @@ import {
 } from "@radix-ui/react-icons";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowDown, ArrowUp } from "lucide-react";
 
 let DEFAULT_TAGS_COUNT = 3;
-if (typeof window !== "undefined") {
-  var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-  if (width > 768) {
-    DEFAULT_TAGS_COUNT = 3;
-  } else if (width < 768 && width > 650) {
-    DEFAULT_TAGS_COUNT = 4;
-  } else {
-    DEFAULT_TAGS_COUNT = 5;
-  }
-}
 
 export default function LinkCard({ linkObj }) {
   const [count, setCount] = useState(DEFAULT_TAGS_COUNT);
   const [isLike, setLike] = useState(false);
+
+  useEffect(() => {
+      var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+      if (width > 768) {
+        setCount(3);
+      } else if (width < 768 && width > 650) {
+        setCount(4);
+      } else {
+        setCount(5);
+      }
+  }, []);
 
   const shareHandler = () => {
     const shareObj = {
@@ -59,7 +60,10 @@ export default function LinkCard({ linkObj }) {
   };
 
   return (
-    <Card className="w-full md:w-72 bg-white flex flex-col h-fit min-h-36 jump-lg">
+    <Card
+      className="w-full md:w-72 bg-white flex flex-col h-fit min-h-36 jump-lg"
+      suppressHydrationWarning
+    >
       <CardHeader className="pt-3 pb-1 px-3 text-2xl">
         <CardTitle>{linkObj.title}</CardTitle>
       </CardHeader>
@@ -73,6 +77,7 @@ export default function LinkCard({ linkObj }) {
               className="py-1 px-1 text-sm font-normal hover:bg-blue-100"
               variant="outline"
               key={index}
+              suppressHydrationWarning
             >
               {tag}
             </Badge>
