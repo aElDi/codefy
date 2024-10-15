@@ -8,6 +8,7 @@ export default async function SearchPage({params, searchParams}) {
   const q = searchParams.q;
   if (!q) return redirect("/collection")
   const db = await JSONFilePreset("db.json", { data: [] });
+  await db.read();
   const { data } = db.data;
   const links = data.filter((link) =>
     link.title.toLowerCase().includes(q.toLowerCase())
