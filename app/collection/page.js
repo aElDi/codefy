@@ -1,16 +1,12 @@
 import CollectionBrowser from "@/components/CollectionBrowser";
-
-import { JSONFilePreset } from "lowdb/node";
+import db from "@/lib/db";
 
 export default async function CollectionPage() {
-  const db = await JSONFilePreset("db.json", { data: [] });
-  await db.read();
-  const links = db.data.data;
-  links.forEach((link, i) => {
-    link.id = i + 1;
+  const links = await db.collection("links").find({}).toArray();
+
+  links.forEach((link) => {
+    delete link._id;
   });
 
-  return (
-    <CollectionBrowser list={links} />
-  );
+  return <CollectionBrowser list={links} />;
 }

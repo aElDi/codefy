@@ -1,9 +1,14 @@
-import {JSONFilePreset} from "lowdb/node"
+import db from "@/lib/db";
+import { NextResponse } from "next/server";
 export async function GET(request, { params }) {
     const id = Number(params.id);
-    const db = await JSONFilePreset('db.json', { data: [] });
-    await db.update((data) => {
-        data.data[id-1].likes -= 1;
-    });
-    return new Response("OK");
+    try{
+        await db.collection("links").findOneAndUpdate({id: id}, {
+            $inc: { likes: -1 }
+        });
+        return new NextResponse("OK")
+    } catch (e) {
+        console.error(e)
+        return NextResponse.error();
+    }
 }

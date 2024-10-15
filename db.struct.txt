@@ -1,6 +1,0 @@
-link
-image
-desc
-title
-tags
-likes

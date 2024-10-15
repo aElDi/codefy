@@ -6,16 +6,19 @@ import { Button } from "../ui/button";
 import { SortDescIcon } from "lucide-react";
 
 export default function CollectionBrowser({ list, searchQuery }) {
-  const [shownList, setShownList] = useState(list);
+  const [loading, setLoading] = useState(true);
+  const [shownList, setShownList] = useState([]);
   const [sortRule, setSortRule] = useState("likes");
 
   useEffect(() => {
+    setLoading(true);
     if (sortRule === "likes") {
       const newList = list.toSorted((a, b) => b.likes - a.likes);
       setShownList(newList);
     } else {
       setShownList(list.toSorted((a, b) => b.id - a.id));
     }
+    setLoading(false);
   }, [sortRule, list]);
 
   return (
@@ -39,7 +42,8 @@ export default function CollectionBrowser({ list, searchQuery }) {
         className="grid gap-3 md:gap-4 w-full md:w-fit sm:min-w-[50%] md:min-w-[60%] lg:min-w-[77%] p-2 md:p-4 place-self-center md:bg-white md:bg-opacity-30 md:rounded-2xl"
         style={{ gridTemplateColumns: "repeat(auto-fill, minmax(18rem, 1fr))" }}
       >
-        {shownList.length == 0 && (<h2>Not Found</h2>)}
+        {(shownList.length == 0 && !loading) && (<h2>Not Found</h2>)}
+        {loading && <d>ded</d>}
         {shownList.map((link, index) => (
           <LinkCard linkObj={link} key={index} />
         ))}
