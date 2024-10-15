@@ -68,10 +68,14 @@ export default function Home() {
               </span>
             </Link>
             <span>
-              If you have a suggestions or questions, you can contact me in
+              If you have a suggestions or questions, you can contact us in
               Telegram:{" "}
               <Link className="text-blue-600" href="https://t.me/a3ldi">
-                @a3ldi
+              @a3ldi 
+              </Link>
+              {" "} or {" "}
+              <Link className="text-blue-600" href="https://t.me/saloloh">
+              @saloloh
               </Link>
             </span>
           </span>

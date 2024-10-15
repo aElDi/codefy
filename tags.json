@@ -11,6 +11,7 @@
             "TypeScript",
             "Html",
             "CSS",
+            "Markdown",
             "PHP",
             "Ruby",
             "Swift",
@@ -33,9 +34,71 @@
         "tags": [
             "Guide",
             "Article",
-            "Wiki",
-            "Hard skills",
-            "Soft skills"
+            "Wiki"
+        ]
+    },
+    {
+        "category": "Platform",
+        "tags": [
+            "Web",
+            "Program",
+            "Desktop",
+            "App",
+            "Site"
+        ]
+    },
+    {
+        "category": "Frameworks",
+        "tags": [
+            "React",
+            "Angular",
+            "Django",
+            "Flask",
+            "Spring",
+            "Laravel",
+            "Vue.js",
+            "ASP.NET",
+            "Express"
+        ]
+    },
+    {
+        "category": "Dev tools",
+        "tags": [
+            "Git",
+            "Docker",
+            "Kubernetes",
+            "VS Code",
+            "Visual Studio",
+            "Xcode",
+            "Eclipse",
+            "IntelliJ IDEA",
+            "PyCharm",
+            "JIRA",
+            "Postman"
+        ]
+    },
+    {
+        "category": "Databases",
+        "tags": [
+            "MySQL",
+            "PostgreSQL",
+            "MongoDB",
+            "SQLite",
+            "Oracle",
+            "Redis",
+            "Cassandra",
+            "MariaDB"
+        ]
+    },
+    {
+        "category": "Methodologies",
+        "tags": [
+            "Agile",
+            "Scrum",
+            "Kanban",
+            "Waterfall",
+            "DevOps",
+            "Lean"
         ]
     }
 ]
