@@ -2,9 +2,43 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
+/**@type {import("next").Metadata} */
 export const metadata = {
   title: "Codefy",
-  description: "Collection of all useful links for programmers",
+  description: "Curated collection of useful links and resources for programmers, categorized by tags for easy navigation. In the ever-evolving field of programming, having quick access to quality resources can significantly enhance your learning and productivity. Codefy aims to provide a comprehensive list of valuable links, including tutorials, documentation, tools, and more, all organized by relevant tags.",
+  openGraph: {
+    title: "Codefy - Collection for programmers",
+    description: "Curated collection of useful links and resources for programmers, categorized by tags for easy navigation. In the ever-evolving field of programming, having quick access to quality resources can significantly enhance your learning and productivity. Codefy aims to provide a comprehensive list of valuable links, including tutorials, documentation, tools, and more, all organized by relevant tags.",
+    url: "https://codefy.a3ldi.ru/",
+    siteName: "Codefy",
+    images: [
+      {
+        url: "https://codefy.a3ldi.ru/img/banner@og.png",
+        width: 1200,
+        height: 630,
+      },
+      {
+        url: "https://codefy.a3ldi.ru/img/banner@og2.png",
+        width: 520,
+        height: 228,
+      },
+    ],
+    locale: "en_US",
+    type:"website",
+  },
+  robots: {
+    index: true,
+    follow: false,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Codefy',
+    description: 'The collection of useful links for programmers',
+    images: ['https://codefy.a3ldi.ru/img/banner@og.png'], // Must be an absolute URL
+  },
+  other: {
+    "vk:image": "https://codefy.a3ldi.ru/img/banner@og2.png"
+  }
 };
 
 const font = Open_Sans({ weight: "variable", subsets: ["cyrillic", "latin"] });

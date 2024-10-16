@@ -61,7 +61,7 @@ export default function LinkCard({ linkObj }) {
 
   return (
     <Card
-      className="w-full md:w-72 bg-white flex flex-col h-fit min-h-36 jump-lg"
+      className="w-full md:w-72 bg-white flex flex-col h-fit min-h-36"
       suppressHydrationWarning
     >
       <CardHeader className="pt-3 pb-1 px-3 text-2xl">
