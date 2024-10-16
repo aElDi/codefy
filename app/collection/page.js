@@ -1,13 +1,13 @@
 import CollectionBrowser from "@/components/CollectionBrowser";
 import db from "@/lib/db";
 
-export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic";
 export default async function CollectionPage() {
-  const links = await db.collection("links").find({}).toArray();
+    const links = await db.collection("links").find({}).toArray();
 
-  links.forEach((link) => {
-    delete link._id;
-  });
+    links.forEach((link) => {
+        delete link._id;
+    });
 
-  return <CollectionBrowser list={links} />;
+    return <CollectionBrowser list={links} />;
 }

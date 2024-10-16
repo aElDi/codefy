@@ -2,27 +2,33 @@ import db from "@/lib/db";
 import { NextResponse } from "next/server";
 
 export async function GET(request, { params }) {
-
-    //получение ip
-    const user_ip =  request.ip + request.headers.get('User-Agent');
+    // Gets user fingerprint.
+    // Allows to block spamming
+    const user_fingerprint = getRequsetFingerprint(request);
     const id = Number(params.id);
 
-    //проверка есть ли лайк от чела
-    const like_exist = await db.collection("likes").findOne({ ip: user_ip, link_id: id });   
+    // Check like existing
+    const like_exist = await db
+        .collection("likes")
+        .findOne({ fingerprint: user_fingerprint, link_id: id });
     if (!like_exist) {
-        return NextResponse("DID NOT LIKED", { status: 400 });
-    } 
+        return NextResponse("DID NOT LIKED", { status: 403 });
+    }
     try {
+        await db
+            .collection("likes")
+            .deleteOne({ fingerprint: user_fingerprint, link_id: id });
 
-        //удаление одного
-        await db.collection("likes").deleteOne({ ip: user_ip, link_id: id });
-
-        await db.collection("links").findOneAndUpdate({id: id}, {
-            $inc: { likes: -1 }
-        });
-        return new NextResponse("OK")
+        // Decrement likes count in database
+        await db.collection("links").findOneAndUpdate(
+            { id: id },
+            {
+                $inc: { likes: -1 },
+            }
+        );
+        return new NextResponse("OK");
     } catch (e) {
-        console.error(e)
+        console.error(e);
         return NextResponse.error();
     }
 }

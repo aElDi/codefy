@@ -31,21 +31,11 @@
     },
     {
         "category": "Type",
-        "tags": [
-            "Guide",
-            "Article",
-            "Wiki"
-        ]
+        "tags": ["Guide", "Article", "Wiki"]
     },
     {
         "category": "Platform",
-        "tags": [
-            "Web",
-            "Program",
-            "Desktop",
-            "App",
-            "Site"
-        ]
+        "tags": ["Web", "Program", "Desktop", "App", "Site"]
     },
     {
         "category": "Frameworks",
@@ -92,13 +82,6 @@
     },
     {
         "category": "Methodologies",
-        "tags": [
-            "Agile",
-            "Scrum",
-            "Kanban",
-            "Waterfall",
-            "DevOps",
-            "Lean"
-        ]
+        "tags": ["Agile", "Scrum", "Kanban", "Waterfall", "DevOps", "Lean"]
     }
 ]

@@ -8,17 +8,14 @@
 
 Welcome to **Codefy**. This project is website with a curated collection of useful links and resources for programmers, categorized by tags for easy navigation. In the ever-evolving field of programming, having quick access to quality resources can significantly enhance your learning and productivity. Codefy aims to provide a comprehensive list of valuable links, including tutorials, documentation, tools, and more, all organized by relevant tags.
 
-
 ## Screenshots
 
 ![App Screenshot](/public/img/screenshot.png)
 
-
 ## Features
 
-- Tag and title search
-- Adding links
-
+-   Tag and title search
+-   Adding links
 
 ## Run Locally
 
@@ -46,8 +43,6 @@ Start the developing server
 npm run dev
 ```
 
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-

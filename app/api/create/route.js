@@ -10,6 +10,6 @@ export async function POST(request) {
         return new NextResponse("OK");
     } catch (e) {
         console.error(e);
-        return NextResponse.error()
-    }    
+        return NextResponse.error();
+    }
 }
