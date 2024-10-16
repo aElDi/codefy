@@ -16,7 +16,12 @@ export const metadata = {
         url: "https://codefy.a3ldi.ru/img/banner@og.png",
         width: 1200,
         height: 630,
-      }
+      },
+      {
+        url: "https://codefy.a3ldi.ru/img/banner@og2.png",
+        width: 520,
+        height: 228,
+      },
     ],
     locale: "en_US",
     type:"website",
@@ -31,6 +36,9 @@ export const metadata = {
     description: 'The collection of useful links for programmers',
     images: ['https://codefy.a3ldi.ru/img/banner@og.png'], // Must be an absolute URL
   },
+  other: {
+    "vk:image": "https://codefy.a3ldi.ru/img/banner@og2.png"
+  }
 };
 
 const font = Open_Sans({ weight: "variable", subsets: ["cyrillic", "latin"] });
