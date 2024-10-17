@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import LinkCard from "@/components/LinkCard";
 import { Button } from "../ui/button";
-import { SortDescIcon } from "lucide-react";
+import { LoaderCircle, SortDescIcon } from "lucide-react";
 import NotFound from "../NotFound";
 
 export default function CollectionBrowser({ list, searchQuery }) {
@@ -25,7 +25,7 @@ export default function CollectionBrowser({ list, searchQuery }) {
     return (
         <div className="w-full flex flex-col gap-0 md:gap-4 h-fit ">
             <div className="h-fit p-1 flex flex-col md:flex-row justify-between md:justify-start gap-2 w-full">
-                {searchQuery && (
+                {searchQuery && ( // If have search query
                     <h1 className="bg-white bg-opacity-80 shadow-md font-medium transition-colors rounded-md items-center flex gap-1 hover:bg-blue-500 text-black text-opacity-80 hover:text-white text-lg px-2 w-fit">
                         Results of search:{" "}
                         <b className="text-blue-700 hover:text-white">
@@ -33,29 +33,39 @@ export default function CollectionBrowser({ list, searchQuery }) {
                         </b>
                     </h1>
                 )}
-
-                <Button
-                    className="bg-white bg-opacity-80 shadow-md items-center flex gap-1 hover:bg-blue-500 text-black text-opacity-80 hover:text-white text-lg px-2 py-4 w-fit"
-                    onClick={() =>
-                        setSortRule(sortRule === "likes" ? "date" : "likes")
-                    }>
-                    <SortDescIcon strokeWidth={1} size={20} />
-                    <span>
-                        {sortRule === "likes" ? "Most liked" : "Recent"}
-                    </span>
-                </Button>
+                {list.length > 0 && ( // If nothing to display
+                    <Button
+                        className="bg-white bg-opacity-80 shadow-md items-center flex gap-1 hover:bg-blue-500 text-black text-opacity-80 hover:text-white text-lg px-2 py-4 w-fit"
+                        onClick={() =>
+                            setSortRule(sortRule === "likes" ? "date" : "likes")
+                        }>
+                        <SortDescIcon strokeWidth={1} size={20} />
+                        <span>
+                            {sortRule === "likes" ? "Most liked" : "Recent"}
+                        </span>
+                    </Button>
+                )}
             </div>
-            <div
-                className="grid gap-3 md:gap-4 w-full md:w-fit sm:min-w-[50%] md:min-w-[60%] lg:min-w-[77%] p-2 md:p-4 place-self-center md:bg-white md:bg-opacity-30 md:rounded-2xl"
-                style={{
-                    gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 1fr))",
-                }}>
-                {shownList.length == 0 && !loading && <NotFound />}
-                {loading && <d>ded</d>}
-                {shownList.map((link, index) => (
-                    <LinkCard linkObj={link} key={index} />
-                ))}
-            </div>
+            {loading && ( // While loading
+                <LoaderCircle
+                    className="self-center animate-spin text-white mt-4"
+                    size="64"
+                    strokeWidth={2}
+                />
+            )}
+            {shownList.length == 0 && !loading && <NotFound />}
+            {!loading && shownList.length > 0 && (
+                <div
+                    className="grid gap-3 md:gap-4 w-full md:w-fit sm:min-w-[50%] md:min-w-[60%] lg:min-w-[77%] p-2 md:p-4 place-self-center md:bg-white md:bg-opacity-30 md:rounded-2xl"
+                    style={{
+                        gridTemplateColumns:
+                            "repeat(auto-fit, minmax(18rem, 1fr))",
+                    }}>
+                    {shownList.map((link, index) => (
+                        <LinkCard linkObj={link} key={index} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

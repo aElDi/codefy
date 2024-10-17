@@ -26,13 +26,17 @@ export default function LinkCard({ linkObj }) {
     const [isLike, setLike] = useState(false);
 
     useEffect(() => {
+        // Adaptive tags count changing
         var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
         if (width > 768) {
             setCount(3);
+            DEFAULT_TAGS_COUNT = 3;
         } else if (width < 768 && width > 650) {
             setCount(4);
+            DEFAULT_TAGS_COUNT = 4;
         } else {
             setCount(5);
+            DEFAULT_TAGS_COUNT = 5;
         }
     }, []);
 
@@ -74,17 +78,22 @@ export default function LinkCard({ linkObj }) {
                 <CardDescription className="text-md basis-[2.12rem] leading-4 text-ellipsis line-clamp-2">
                     {linkObj.desc}
                 </CardDescription>
-                <div className="flex flex-wrap gap-1 w-fit ">
-                    {linkObj.tags.slice(0, count).map((tag, index) => (
-                        <Badge
-                            className="py-1 px-1 text-sm font-normal hover:bg-blue-100"
-                            variant="outline"
-                            key={index}
-                            suppressHydrationWarning>
-                            {tag}
-                        </Badge>
-                    ))}
-                    {linkObj.tags.length > count && (
+                <div className="flex flex-wrap gap-1 w-fit">
+                    {linkObj.tags.slice(0, count).map(
+                        (
+                            tag,
+                            index // Display |count| tag badges
+                        ) => (
+                            <Badge
+                                className="py-1 px-1 text-sm font-normal hover:bg-blue-100"
+                                variant="outline"
+                                key={index}
+                                suppressHydrationWarning>
+                                {tag}
+                            </Badge>
+                        )
+                    )}
+                    {linkObj.tags.length > count && ( // If there are more tags than displayed, it shows the expand button
                         <Badge
                             className="py-1 px-1 text-[10px] font-normal hover:bg-zinc-300"
                             variant="secondary"
@@ -92,9 +101,9 @@ export default function LinkCard({ linkObj }) {
                             <ArrowDown strokeWidth={1} size={16} />
                         </Badge>
                     )}
-                    {linkObj.tags.length <= count &&
-                        linkObj.tags.length > DEFAULT_TAGS_COUNT && (
-                            <Badge
+                    {linkObj.tags.length == count && // If tags are expanded (number of tags == count)
+                        linkObj.tags.length > DEFAULT_TAGS_COUNT && ( // and the number of tags > DEFAULT_TAGS_COUNT
+                            <Badge // then we show the collapse button
                                 className="py-1 px-1 text-[10px] font-normal hover:bg-zinc-300"
                                 variant="secondary"
                                 onClick={() => setCount(DEFAULT_TAGS_COUNT)}>
