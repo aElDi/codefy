@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import LinkCard from "@/components/LinkCard";
 import { Button } from "../ui/button";
 import { SortDescIcon } from "lucide-react";
+import NotFound from "../NotFound";
 
 export default function CollectionBrowser({ list, searchQuery }) {
     const [loading, setLoading] = useState(true);
@@ -47,10 +48,9 @@ export default function CollectionBrowser({ list, searchQuery }) {
             <div
                 className="grid gap-3 md:gap-4 w-full md:w-fit sm:min-w-[50%] md:min-w-[60%] lg:min-w-[77%] p-2 md:p-4 place-self-center md:bg-white md:bg-opacity-30 md:rounded-2xl"
                 style={{
-                    gridTemplateColumns:
-                        "repeat(auto-fill, minmax(18rem, 1fr))",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 1fr))",
                 }}>
-                {shownList.length == 0 && !loading && <h2>Not Found</h2>}
+                {shownList.length == 0 && !loading && <NotFound />}
                 {loading && <d>ded</d>}
                 {shownList.map((link, index) => (
                     <LinkCard linkObj={link} key={index} />

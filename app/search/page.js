@@ -1,10 +1,11 @@
 import CollectionBrowser from "@/components/CollectionBrowser";
 import db from "@/lib/db";
+import { escapeRegExp } from "@/lib/utils";
 
 import { redirect } from "next/navigation";
 
 export default async function SearchPage({ params, searchParams }) {
-    const q = searchParams.q;
+    const q = escapeRegExp(searchParams.q);
     if (!q) return redirect("/collection");
     const links = await db
         .collection("links")
