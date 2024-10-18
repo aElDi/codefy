@@ -1,6 +1,7 @@
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/toaster";
 
 /**@type {import("next").Metadata} */
 export const metadata = {
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
                             {children}
                         </div>
                     </div>
+                    <Toaster />
                 </div>
             </body>
         </html>

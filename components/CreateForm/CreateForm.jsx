@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 import {
     Form,
     FormControl,
@@ -17,6 +17,7 @@ import { Textarea } from "../ui/textarea";
 import axios from "axios";
 import { MultiSelect } from "../ui/multiselect";
 import tags from "@/tags.json";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
     title: z.string({ message: "Title must be string" }).trim().min(3).max(20),
@@ -25,22 +26,45 @@ const formSchema = z.object({
     tags: z.array(z.string()).max(7, { message: "Not more than 7 tags" }),
 });
 
+const defaultValues = {
+    title: "",
+    link: "",
+    desc: "",
+    tags: [],
+};
+
 export default function CreateForm() {
     const form = useForm({
         resolver: zodResolver(formSchema),
-        defaultValues: {
-            title: "",
-            link: "",
-            desc: "",
-            image: "",
-            tags: [],
-        },
+        defaultValues,
     });
+    const [isLoading, setLoading] = useState(false);
+    const { toast } = useToast();
 
     function formSubmit(values) {
-        axios.post("/api/create", values).then((res) => {
-            console.log(res);
-        });
+        setLoading(true);
+        axios
+            .post("/api/create", values)
+            .then((res) => {
+                form.reset(defaultValues);
+                if (res.status === 200) {
+                    toast({
+                        title: "Done",
+                        description:
+                            "Successfully added! Your card will appear in the collection soon",
+                    });
+                    setLoading(false);
+                }
+            })
+            .catch((e) => {
+                form.setError("root", e);
+                toast({
+                    variant: "destructive",
+                    title: "Error",
+                    description: e.message,
+                });
+                setLoading(false);
+            });
     }
 
     return (
@@ -59,6 +83,7 @@ export default function CreateForm() {
                                     <Input
                                         className="text-xl h-10"
                                         placeholder="Title"
+                                        disabled={isLoading}
                                         {...field}
                                     />
                                 </FormControl>
@@ -75,6 +100,7 @@ export default function CreateForm() {
                                     <Input
                                         className="text-xl h-10"
                                         placeholder="Link"
+                                        disabled={isLoading}
                                         {...field}
                                     />
                                 </FormControl>
@@ -91,6 +117,7 @@ export default function CreateForm() {
                                     <Textarea
                                         className="text-xl h-10 justify-start"
                                         placeholder="Description"
+                                        disabled={isLoading}
                                         {...field}
                                     />
                                 </FormControl>
@@ -110,7 +137,11 @@ export default function CreateForm() {
                                     </h2>
                                 </FormLabel>
                                 <FormControl>
-                                    <MultiSelect values={tags} {...field} />
+                                    <MultiSelect
+                                        values={tags}
+                                        disabled={isLoading}
+                                        {...field}
+                                    />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
