@@ -37,7 +37,10 @@
             "Wiki",
             "Tutorial",
             "Documentation",
-            "Podcast"
+            "Podcast",
+            "Tool",
+            "Open Sorce",
+            "internet's resource"
         ]
     },
     {
@@ -84,7 +87,8 @@
             "Dart",
             "Hugo",
             "FastAPI",
-            "OpenAPI"
+            "OpenAPI",
+            "Bootstrap"
         ]
     },
     {
