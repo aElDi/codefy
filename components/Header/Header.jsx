@@ -41,31 +41,35 @@ export function Header({ className }) {
             )}>
             <Link href="/">
                 <Image
-                    className="scale-125 md:scale-100"
+                    className="w-8 h-8 scale-150 xs:scale-150 md:scale-100"
                     alt="logo"
-                    width={32}
-                    height={32}
-                    src="/img/logo@light.png"
+                    width={33}
+                    height={33}
+                    src={
+                        isDarkMode
+                            ? "/img/logo@dark.svg"
+                            : "/img/logo@light.svg"
+                    }
                 />
             </Link>
 
-            <nav className="flex gap-4 w-full">
+            <nav className="flex gap-3 md:gap-4 w-full">
                 <Link
-                    className="text-lg hover:text-blue-500 transition-colors font-medium"
+                    className="text-base sm:text-lg hover:text-blue-500 transition-colors font-medium"
                     href="/collection">
                     Collection
                 </Link>
                 <Link
-                    className="text-lg hover:text-blue-500 transition-colors font-medium"
+                    className="text-base sm:text-lg hover:text-blue-500 transition-colors font-medium"
                     href="/create">
                     Create
                 </Link>
             </nav>
-            <div className="flex gap-2 items-center">
+            <div className="max-[400px]:gap-1 md:gap-2 flex items-center">
                 <Input
                     type="text"
                     placeholder="Search"
-                    className="dark:bg-zinc-900 h-6 w-28 md:w-full md:h-fit"
+                    className="dark:bg-zinc-900 h-6 w-24 md:w-full md:h-fit"
                     onInput={(e) => setSearchText(e.target.value)}
                     onKeyDown={(e) => {
                         if (e.keyCode === 13) searchHandler();
@@ -83,10 +87,13 @@ export function Header({ className }) {
                             />
                         </Button>
                     }></Input>
-                <Button variant="ghost" onClick={toggleTheme} className="p-2">
+                <Button
+                    variant="ghost"
+                    onClick={toggleTheme}
+                    className="p-2 h-10 w-8">
                     {isDarkMode ? (
                         <Image
-                            className="scale-125 md:scale-100"
+                            className="scale-150 md:scale-150"
                             alt="logo"
                             width={32}
                             height={32}
@@ -94,7 +101,7 @@ export function Header({ className }) {
                         />
                     ) : (
                         <Image
-                            className="scale-125 md:scale-100"
+                            className="scale-150 md:scale-150"
                             alt="logo"
                             width={32}
                             height={32}
