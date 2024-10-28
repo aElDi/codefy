@@ -26,7 +26,7 @@ export default function CollectionBrowser({ list, searchQuery }) {
         <div className="w-full flex flex-col gap-0 md:gap-4 h-fit ">
             <div className="h-fit p-1 flex flex-col md:flex-row justify-between md:justify-start gap-2 w-full">
                 {searchQuery && ( // If have search query
-                    <h1 className="bg-white bg-opacity-80 shadow-md font-medium transition-colors rounded-md items-center flex gap-1 hover:bg-blue-500 text-black text-opacity-80 hover:text-white text-lg px-2 w-fit">
+                    <h1 className=" dark:bg-neutral-800 dark:text-white dark:hover:bg-blue-500 bg-neutral-100 bg-opacity-80 shadow-md font-medium transition-colors rounded-md items-center flex gap-1 hover:bg-blue-500 text-black text-opacity-80 hover:text-white text-lg px-2 w-fit">
                         Results of search:{" "}
                         <b className="text-blue-700 hover:text-white">
                             {searchQuery}
@@ -35,7 +35,7 @@ export default function CollectionBrowser({ list, searchQuery }) {
                 )}
                 {list.length > 0 && ( // If nothing to display
                     <Button
-                        className="bg-white bg-opacity-80 shadow-md items-center flex gap-1 hover:bg-blue-500 text-black text-opacity-80 hover:text-white text-lg px-2 py-4 w-fit"
+                        className=" dark:bg-neutral-800 dark:text-white dark:hover:bg-blue-500 bg-neutral-100 bg-opacity-80 shadow-md items-center flex gap-1 hover:bg-blue-500 text-black text-opacity-80 hover:text-white text-lg px-2 py-4 w-fit"
                         onClick={() =>
                             setSortRule(sortRule === "likes" ? "date" : "likes")
                         }>
@@ -56,7 +56,7 @@ export default function CollectionBrowser({ list, searchQuery }) {
             {shownList.length == 0 && !loading && <NotFound />}
             {!loading && shownList.length > 0 && (
                 <div
-                    className="grid gap-3 md:gap-4 w-full md:w-fit sm:min-w-[50%] md:min-w-[60%] lg:min-w-[77%] p-2 md:p-4 place-self-center md:bg-white md:bg-opacity-30 md:rounded-2xl"
+                    className="dark:bg-neutral-800 dark:text-white grid gap-3 md:gap-4 w-full md:w-fit sm:min-w-[50%] md:min-w-[60%] lg:min-w-[77%] p-2 md:p-4 place-self-center md:bg-white md:bg-opacity-30 md:rounded-2xl"
                     style={{
                         gridTemplateColumns:
                             "repeat(auto-fit, minmax(18rem, 1fr))",

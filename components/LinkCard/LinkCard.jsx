@@ -69,23 +69,23 @@ export default function LinkCard({ linkObj }) {
 
     return (
         <Card
-            className="w-full md:w-72 bg-white flex flex-col h-fit min-h-36"
+            className="dark:bg-[#1b1b1b] w-full md:w-72 bg-white flex flex-col h-fit min-h-36"
             suppressHydrationWarning>
-            <CardHeader className="pt-3 pb-1 px-3 text-2xl">
+            <CardHeader className="pt-3 pb-1 px-3 text-2xl ">
                 <CardTitle>{linkObj.title}</CardTitle>
             </CardHeader>
             <CardContent className="px-3 py-1 pb-0 flex flex-col gap-2 grow">
                 <CardDescription className="text-md basis-[2.12rem] leading-4 text-ellipsis line-clamp-2">
                     {linkObj.desc}
                 </CardDescription>
-                <div className="flex flex-wrap gap-1 w-fit">
+                <div className="flex flex-wrap gap-1 w-fit ">
                     {linkObj.tags.slice(0, count).map(
                         (
                             tag,
                             index // Display |count| tag badges
                         ) => (
                             <Badge
-                                className="py-1 px-1 text-sm font-normal hover:bg-blue-100"
+                                className="dark:hover:bg-zinc-800 py-1 px-1 text-sm font-normal hover:bg-blue-100"
                                 variant="outline"
                                 key={index}
                                 suppressHydrationWarning>
@@ -95,7 +95,7 @@ export default function LinkCard({ linkObj }) {
                     )}
                     {linkObj.tags.length > count && ( // If there are more tags than displayed, it shows the expand button
                         <Badge
-                            className="py-1 px-1 text-[10px] font-normal hover:bg-zinc-300"
+                            className="dark:hover:bg-zinc-700 py-1 px-1 text-[10px] font-normal hover:bg-zinc-300"
                             variant="secondary"
                             onClick={() => setCount(linkObj.tags.length)}>
                             <ArrowDown strokeWidth={1} size={16} />
@@ -104,7 +104,7 @@ export default function LinkCard({ linkObj }) {
                     {linkObj.tags.length == count && // If tags are expanded (number of tags == count)
                         linkObj.tags.length > DEFAULT_TAGS_COUNT && ( // and the number of tags > DEFAULT_TAGS_COUNT
                             <Badge // then we show the collapse button
-                                className="py-1 px-1 text-[10px] font-normal hover:bg-zinc-300"
+                                className="dark:hover:bg-zinc-700 py-1 px-1 text-[10px] font-normal hover:bg-zinc-300"
                                 variant="secondary"
                                 onClick={() => setCount(DEFAULT_TAGS_COUNT)}>
                                 <ArrowUp strokeWidth={1} size={16} />
@@ -124,7 +124,7 @@ export default function LinkCard({ linkObj }) {
                 <div className="w-full flex flex-row-reverse gap-2">
                     <Button
                         variant="outline"
-                        className="h-8 md:h-7 w-fit px-1 space-x-1"
+                        className="dark:hover:bg-zinc-800 dark:bg-zinc-900 h-8 md:h-7 w-fit px-1 space-x-1"
                         onClick={likeOrUnlike}>
                         {isLike ? (
                             <HeartFilledIcon className="text-blue-500 size-5" />
@@ -138,7 +138,7 @@ export default function LinkCard({ linkObj }) {
                     </Button>
                     <Button
                         variant="outline"
-                        className="h-8 md:h-7 w-8 md:w-7 px-1"
+                        className="dark:hover:bg-zinc-800 dark:bg-zinc-900 h-8 md:h-7 w-8 md:w-7 px-1"
                         onClick={shareHandler}>
                         <Share1Icon className="text-blue-500 size-5" />
                     </Button>

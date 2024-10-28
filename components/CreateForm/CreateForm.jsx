@@ -73,7 +73,7 @@ export default function CreateForm() {
             <Form {...form}>
                 <form
                     onSubmit={form.handleSubmit(formSubmit)}
-                    className="space-y-2">
+                    className="dark:bg-zinc-350 space-y-2">
                     <FormField
                         control={form.control}
                         name="title"
@@ -81,7 +81,7 @@ export default function CreateForm() {
                             <FormItem>
                                 <FormControl>
                                     <Input
-                                        className="text-xl h-10"
+                                        className="dark:text-white text-xl h-10"
                                         placeholder="Title"
                                         disabled={isLoading}
                                         {...field}
@@ -98,7 +98,7 @@ export default function CreateForm() {
                             <FormItem>
                                 <FormControl>
                                     <Input
-                                        className="text-xl h-10"
+                                        className="dark:text-white text-xl h-10"
                                         placeholder="Link"
                                         disabled={isLoading}
                                         {...field}
@@ -115,7 +115,7 @@ export default function CreateForm() {
                             <FormItem>
                                 <FormControl>
                                     <Textarea
-                                        className="text-xl h-10 justify-start"
+                                        className="dark:text-white text-xl h-10 justify-start"
                                         placeholder="Description"
                                         disabled={isLoading}
                                         {...field}

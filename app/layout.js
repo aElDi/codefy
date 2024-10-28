@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body
-                className={`${font.className} antialiased p-2 md:p-4 bg-gradient-to-tl from-white to-blue-300 bg-no-repeat bg-fixed h-full text-foreground`}>
+                className={`${font.className} antialiased p-2 md:p-4 bg-gradient-to-tl from-white to-blue-300 dark:from-[#101112] dark:to-[#151515] bg-no-repeat bg-fixed h-full text-foreground `}>
                 <div className="flex flex-row w-full justify-center">
                     <div className="flex flex-col gap-2 w-full xl:w-3/4">
                         <Header className="sticky top-2 md:top-4 z-50" />

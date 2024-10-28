@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
     return (
         <div className="w-full 2xl:w-3/4 h-full flex flex-col gap-2 md:gap-4 ">
-            <div className="card flex w-full justify-between duration-500 hover:bg-opacity-90 overflow-hidden relative">
+            <div className="dark:hover:bg-opacity-50 card flex w-full justify-between duration-500 hover:bg-opacity-90  overflow-hidden relative">
                 <div className="flex flex-col gap-4 md:p-2">
                     <h1 className="text-4xl md:text-6xl font-bold text-blue-500">
                         Codefy
@@ -16,14 +16,14 @@ export default function Home() {
                     </span>
                     <div className="flex gap-2">
                         <Link href="/collection">
-                            <Button className="bg-blue-500 text-md p-3 py-4 hover:bg-white hover:text-blue-700">
+                            <Button className="dark:text-white dark:hover:text-white dark:hover:bg-gray-600 bg-blue-500 text-md p-3 py-4 hover:bg-slate-300 hover:text-blue-700">
                                 Browse
                             </Button>
                         </Link>
                         <Link href="/create">
                             <Button
                                 variant="outline"
-                                className="h-8 w-fit px-2 border-gray-400 text-gray-500 hover:text-blue-500 hover:border-blue-300">
+                                className="dark:bg-zinc-800 dark:hover:border-blue-900 h-8 w-fit px-2 border-gray-400 text-gray-500 hover:text-blue-500 hover:border-blue-300">
                                 <span className="pr-1">Add Link</span>
                                 <PlusIcon width={20} height={20} />
                             </Button>
@@ -37,7 +37,7 @@ export default function Home() {
                     height={512}></Image>
             </div>
             <div className="w-full flex flex-col md:flex-row justify-between gap-2 md:gap-6">
-                <div className="card w-full jump-sm hover:bg-opacity-90">
+                <div className="dark:hover:bg-opacity-50 card w-full jump-sm hover:bg-opacity-90">
                     <h2 className="text-3xl font-semibold mb-2">What is it?</h2>
                     <span className="opacity-80">
                         This collection features valuable links for programmers,
@@ -46,13 +46,13 @@ export default function Home() {
                         <b className="uppercase">best projects</b> to life.
                     </span>
                 </div>
-                <div className="card w-full jump-sm hover:bg-opacity-90">
+                <div className="dark:hover:bg-opacity-50 card w-full jump-sm hover:bg-opacity-90">
                     <h2 className="text-3xl font-semibold mb-2">How to add?</h2>
                     <span className="opacity-80">
                         On the{" "}
                         <Link
                             href="/create"
-                            className="text-blue-600 after:content-['_↗']">
+                            className="dark:text-blue-400 text-blue-600 after:content-['_↗']">
                             Create page
                         </Link>
                         , you can easily add a link to a collection by selecting
@@ -60,7 +60,7 @@ export default function Home() {
                         collection right away.
                     </span>
                 </div>
-                <div className="card w-full space-y-2 jump-sm hover:bg-opacity-90">
+                <div className="dark:hover:bg-opacity-50 card w-full space-y-2 jump-sm hover:bg-opacity-90">
                     <h2 className="text-3xl font-semibold mb-2">Source code</h2>
                     <span className="flex flex-col gap-2">
                         <Link
@@ -75,13 +75,13 @@ export default function Home() {
                             If you have a suggestions or questions, you can
                             contact us in Telegram:{" "}
                             <Link
-                                className="text-blue-600"
+                                className="dark:text-blue-400 text-blue-600"
                                 href="https://t.me/a3ldi">
                                 @a3ldi
                             </Link>{" "}
                             or{" "}
                             <Link
-                                className="text-blue-600"
+                                className="dark:text-blue-400 text-blue-600"
                                 href="https://t.me/saloloh">
                                 @saloloh
                             </Link>

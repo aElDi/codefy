@@ -45,15 +45,7 @@
     },
     {
         "category": "Platform",
-        "tags": [
-            "Web",
-            "Program",
-            "Desktop",
-            "App",
-            "Site",
-            "Mobile",
-            "CLI"
-        ]
+        "tags": ["Web", "Program", "Desktop", "App", "Site", "Mobile", "CLI"]
     },
     {
         "category": "Frameworks",
@@ -69,11 +61,10 @@
             "Express",
             "Ruby on Rails",
             "TensorFlow",
-            "Kotlin",
-            "Swift",
             "Phoenix",
             "Cypress",
             "Svelte",
+            "Astro",
             "Next.js",
             "Gatsby",
             "Flutter",
@@ -122,13 +113,6 @@
     },
     {
         "category": "Methodologies",
-        "tags": [
-            "Agile",
-            "Scrum",
-            "Kanban",
-            "Waterfall",
-            "DevOps",
-            "Lean"
-        ]
+        "tags": ["Agile", "Scrum", "Kanban", "Waterfall", "DevOps", "Lean"]
     }
 ]

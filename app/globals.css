@@ -7,11 +7,19 @@
     --foreground: #171717;
     margin: 0;
     padding: 0;
+    --text-color-dark: #ffffff;
+}
+.dark body {
+    color: var(--text-color-dark);
 }
 
 @layer utilities {
     .card {
-        @apply bg-white bg-opacity-60 p-4 shadow-md rounded-lg;
+        @apply bg-white
+        
+        dark:bg-zinc-800
+
+        bg-opacity-60 p-4 shadow-md rounded-lg;
     }
     .jump-sm {
         @apply hover:scale-[100.3%] transition-all duration-500;

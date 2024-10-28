@@ -1,0 +1,4 @@
+# .prettierignore
+*.svg
+public/icons/*.svg
+.prettierignore

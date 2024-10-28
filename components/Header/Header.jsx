@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,24 @@ import { useRouter } from "next/navigation";
 export function Header({ className }) {
     const [searchText, setSearchText] = useState("");
     const router = useRouter();
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            document.documentElement.classList.add("dark");
+            setIsDarkMode(true);
+        } else {
+            document.documentElement.classList.remove("dark");
+            setIsDarkMode(false);
+        }
+    }, []);
+    const toggleTheme = () => {
+        const newTheme = !isDarkMode ? "dark" : "light";
+        setIsDarkMode(!isDarkMode);
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem("theme", newTheme);
+    };
+
     const searchHandler = () => {
         router.push("/search?q=" + searchText);
     };
@@ -18,7 +36,7 @@ export function Header({ className }) {
     return (
         <header
             className={cn(
-                "bg-white bg-opacity-60 backdrop-blur-sm rounded-lg shadow-md jump-sm flex py-0 px-3 md:px-2 gap-3 md:gap-4 items-center hover:bg-opacity-70 ",
+                "dark:bg-zinc-800 bg-white bg-opacity-60 backdrop-blur-sm rounded-lg shadow-md jump-sm flex py-0 px-3 md:px-2 gap-3 md:gap-4 items-center hover:bg-opacity-70 ",
                 className
             )}>
             <Link href="/">
@@ -33,22 +51,21 @@ export function Header({ className }) {
 
             <nav className="flex gap-4 w-full">
                 <Link
-                    className="text-lg hover:text-blue-500 transition-colors "
+                    className="text-lg hover:text-blue-500 transition-colors font-medium"
                     href="/collection">
                     Collection
                 </Link>
                 <Link
-                    className="text-lg hover:text-blue-500 transition-colors "
+                    className="text-lg hover:text-blue-500 transition-colors font-medium"
                     href="/create">
                     Create
                 </Link>
             </nav>
-
             <div className="flex gap-2 items-center">
                 <Input
                     type="text"
                     placeholder="Search"
-                    className="h-6 w-28 md:w-full md:h-fit"
+                    className="dark:bg-zinc-900 h-6 w-28 md:w-full md:h-fit"
                     onInput={(e) => setSearchText(e.target.value)}
                     onKeyDown={(e) => {
                         if (e.keyCode === 13) searchHandler();
@@ -66,11 +83,31 @@ export function Header({ className }) {
                             />
                         </Button>
                     }></Input>
+                <Button variant="ghost" onClick={toggleTheme} className="p-2">
+                    {isDarkMode ? (
+                        <Image
+                            className="scale-125 md:scale-100"
+                            alt="logo"
+                            width={32}
+                            height={32}
+                            src="/icons/light.svg"
+                        />
+                    ) : (
+                        <Image
+                            className="scale-125 md:scale-100"
+                            alt="logo"
+                            width={32}
+                            height={32}
+                            src="/icons/dark.svg"
+                        />
+                    )}
+                </Button>
+
                 <Link href="https://github.com/aElDi/codefy">
                     <Button
                         variant="ghost"
                         size="icon"
-                        className="h-10 w-8 scale-125 hover:bg-transparent">
+                        className="h-11 w-8 scale-150 hover:bg-transparent">
                         <GitHubLogoIcon strokeWidth={1} />
                     </Button>
                 </Link>
