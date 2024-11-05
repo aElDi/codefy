@@ -1,4 +1,4 @@
-import CollectionBrowser from "@/components/CollectionBrowser";
+import CollectionBrowser from "@/components/pages/CollectionBrowser";
 import db from "@/lib/db";
 import { escapeRegExp } from "@/lib/utils";
 

@@ -1,23 +1,25 @@
 "use client";
-import {
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-    Card,
-} from "../ui/card";
-import Link from "next/link";
+
+import { ArrowDown, ArrowUp } from "lucide-react";
 import {
     ArrowTopRightIcon,
     HeartFilledIcon,
     HeartIcon,
     Share1Icon,
 } from "@radix-ui/react-icons";
-import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import { ArrowDown, ArrowUp } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 let DEFAULT_TAGS_COUNT = 3;
 

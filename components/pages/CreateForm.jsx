@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+
 import {
     Form,
     FormControl,
@@ -7,17 +7,19 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "../ui/form";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
-import { Textarea } from "../ui/textarea";
+} from "@/components/ui/form";
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { MultiSelect } from "@/components/ui/multiselect";
+import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
-import { MultiSelect } from "../ui/multiselect";
 import tags from "@/tags.json";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
     title: z.string({ message: "Title must be string" }).trim().min(3).max(20),
@@ -32,7 +34,6 @@ const defaultValues = {
     desc: "",
     tags: [],
 };
-
 export default function CreateForm() {
     const form = useForm({
         resolver: zodResolver(formSchema),

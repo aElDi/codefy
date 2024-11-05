@@ -1,6 +1,7 @@
-import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+
+import Header from "@/components/nav/Header";
+import { Open_Sans } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 
 /**@type {import("next").Metadata} */

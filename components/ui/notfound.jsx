@@ -1,7 +1,7 @@
 import { CrossCircledIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
-export default function NotFound() {
+export function NotFound() {
     return (
         <div className="flex flex-col w-fit self-center items-center gap-3 card">
             <CrossCircledIcon className="w-16 h-16 text-red-400" />
