@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import LinkCard from "@/components/LinkCard";
-import { Button } from "../ui/button";
+import LinkCard from "@/components/widgets/LinkCard";
+import { Button } from "@/components/ui/button";
 import { LoaderCircle, SortDescIcon } from "lucide-react";
-import NotFound from "../NotFound";
+import { NotFound } from "@/components/ui/notfound";
 
 export default function CollectionBrowser({ list, searchQuery }) {
     const [loading, setLoading] = useState(true);
